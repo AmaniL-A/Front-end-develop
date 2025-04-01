@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Design Applicatie</h1>
+        <nav aria-label="Hoofdmenu">
+            <!-- Menu-knop voor mobiel -->
+            <button class="menu-toggle">☰ Menu</button>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="over.html">Over mij</a></li>
+                <li><a href="contact.html">Neem contact op</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Welkom op mijn website</h2>
+
+            <section>
+                <h3>Over Mij</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </section>
+
+            <section>
+                <h3>Portfolio</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </section>
+        </article>
+
+        <section aria-labelledby="contact">
+            <h2 id="contact">Neem contact op</h2>
+            <form>
+                <label for="naam">Naam:</label>
+                <input type="text" id="naam" name="naam" required>
+
+                <label for="email">E-mailadres:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit">Verzenden</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Amani Design. Alle rechten voorbehouden.</p>
+    </footer>
+
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".menu").classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

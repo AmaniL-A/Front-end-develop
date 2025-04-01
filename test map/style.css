@@ -1,0 +1,83 @@
+/* Algemene stijlen */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header - Main - Footer */
+    min-height: 100vh;
+}
+
+/* Header en navigatie */
+header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Standaard navigatiemenu */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+/* Responsive dropdown-menu */
+.menu-toggle {
+    display: none;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+/* Media query voor schermen kleiner dan 600px */
+@media only screen and (max-width: 600px) {
+    /* Verberg standaard het menu en toon de menu-knop */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav ul li a {
+        padding: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Toon menu als het actief is */
+    nav ul.active {
+        display: flex;
+    }
+}

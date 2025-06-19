@@ -1,19 +1,27 @@
-@use '_partials/variables' as v;
-@use '_partials/mixins' as m;
+// Variabelen
+$primary-color: #333;
+$secondary-color: #444;
+$text-color: white;
+$font-family: Arial, sans-serif;
+$mobile-breakpoint: 600px;
 
-// Algemene stijlen
 body {
-  font-family: v.$font-family;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f2f5;
   color: #2c3e50;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-rows: auto 1fr auto; // Header - Main - Footer
-  min-height: 100vh;
 }
 
-// Typografie
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
 h1, h2 {
   color: #34495e;
   margin-bottom: 10px;
@@ -38,65 +46,31 @@ li {
   font-size: 15px;
 }
 
-button, input[type="button"] {
+.button {
+  display: inline-block;
   background-color: #3498db;
   color: white;
-  border: none;
+  text-decoration: none;
   padding: 10px 15px;
-  font-size: 14px;
   border-radius: 6px;
-  cursor: pointer;
-  margin-bottom: 20px;
+  font-size: 14px;
   transition: background-color 0.3s;
+  margin-bottom: 20px;
 }
 
-button:hover, input[type="button"]:hover {
+.button:hover {
   background-color: #2980b9;
 }
 
-strong {
-  color: #2c3e50;
-}
-
-b {
-  font-weight: bold;
-}
-
-// Header en navigatie
-header {
-  background: v.$primary-color;
-  color: v.$text-color;
-  padding: 1rem;
-  text-align: center;
-}
-
-// Navigatie
-nav {
-  ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      margin: 0 15px;
-
-      a {
-        color: v.$text-color;
-        text-decoration: none;
-        padding: 10px;
-        display: block;
-      }
-    }
-  }
+.section {
+  margin-bottom: 30px;
 }
 
 // Responsive dropdown-menu
 .menu-toggle {
   display: none;
-  background-color: v.$secondary-color;
-  color: v.$text-color;
+  background-color: $secondary-color;
+  color: $text-color;
   border: none;
   padding: 10px;
   font-size: 18px;
@@ -106,13 +80,13 @@ nav {
 }
 
 // Mobiel
-@media only screen and (max-width: v.$mobile-breakpoint) {
+@media only screen and (max-width: $mobile-breakpoint) {
   nav {
     ul {
       display: none;
       flex-direction: column;
       width: 100%;
-      background-color: v.$primary-color;
+      background-color: $primary-color;
       position: absolute;
       top: 60px;
       left: 0;
